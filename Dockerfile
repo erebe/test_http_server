@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN sleep 10
+RUN yes
 
 CMD [ "python3", "app.py"]
 
