@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN yes
-
 CMD [ "python3", "app.py"]
 
 
