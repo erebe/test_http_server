@@ -11,12 +11,3 @@ sdfqsd
 
 qsdqsdqsd
 qsdqsd
-qsdqsd
-qsd
-
-qsdqsdsdfsdf
-sdfsdfsdfsdfsdfsdfsdfqsd
-sdfsdfsd
-sdfsdfsdfsdf
-df
-qsd
