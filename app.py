@@ -3,6 +3,8 @@
 import http.server as SimpleHTTPServer
 import socketserver as SocketServer
 import logging
+import time
+
 
 PORT = 8000
 
@@ -22,4 +24,5 @@ Handler = GetHandler
 httpd = SocketServer.TCPServer(("", PORT), Handler)
 
 print("Serving on port :8000")
-httpd.serve_forever()
+time.sleep(30)
+#httpd.serve_forever()
