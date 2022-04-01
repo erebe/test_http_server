@@ -24,5 +24,4 @@ Handler = GetHandler
 httpd = SocketServer.TCPServer(("", PORT), Handler)
 
 print("Serving on port :8000")
-time.sleep(30)
-#httpd.serve_forever()
+httpd.serve_forever()
