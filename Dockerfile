@@ -7,5 +7,3 @@ ARG QOVERY_PROJECT_ID
 COPY . .
 
 CMD [ "python3", "app.py"]
-
-
