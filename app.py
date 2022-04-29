@@ -20,7 +20,7 @@ class GetHandler(
     def do_POST(self):
         logging.error(self.headers)
     
-    def do_HEAD):
+    def do_HEAD(self):
         sys.exit(1)
 
 
