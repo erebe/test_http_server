@@ -8,7 +8,6 @@ qsdqsdqsdqdqsd
 sdsdfsdfsdfsfsdfsdfs
 sdfsdfsdf
 sdfsdfsdfsdfsdf
-qsdqsdqsd
 sfssfsf
 qsdqsdqsd
 qsdqsdqsd
