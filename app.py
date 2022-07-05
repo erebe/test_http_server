@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
+from simple_websocket_server import WebSocketServer, WebSocket
 import http.server as SimpleHTTPServer
 import socketserver as SocketServer
 import logging
 import time
 import sys
+from threading import Thread
 
 
 PORT = 8000
+WS_PORT = 8001
 
 class GetHandler(
         SimpleHTTPServer.SimpleHTTPRequestHandler
@@ -24,8 +27,23 @@ class GetHandler(
         sys.exit(1)
 
 
+class SimpleEcho(WebSocket):
+    def handle(self):
+        # echo message back to client
+        self.send_message(self.data)
+
+    def connected(self):
+        print(self.address, 'connected')
+
+    def handle_close(self):
+        print(self.address, 'closed')
+
+
 Handler = GetHandler
 httpd = SocketServer.TCPServer(("", PORT), Handler)
+server = WebSocketServer('', WS_PORT, SimpleEcho)
 
-print("Serving on port :8000")
+print("Serving HTTP on port :8000")
+print("Serving WS on port :8001")
+Thread(target=server.serve_forever).start()
 httpd.serve_forever()
