@@ -41,7 +41,7 @@ class SimpleEcho(WebSocket):
 
 Handler = GetHandler
 httpd = SocketServer.TCPServer(("", PORT), Handler)
-server = WebSocketServer('', WS_PORT, SimpleEcho)
+server = WebSocketServer('0.0.0.0', WS_PORT, SimpleEcho)
 
 print("Serving HTTP on port :8000")
 print("Serving WS on port :8001")
