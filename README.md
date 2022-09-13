@@ -4,11 +4,3 @@ dfjdjd
 qsdqsdqsdqsdqsdqsdqsd
 qsdqsdqsd
 qsdqsdqsdqsdwxcwc
-qsdqsdqsdqdqsd
-sdsdfsdfsdfsfsdfsdfs
-sdfsdfsdf
-sdfsdfsdfsdfsdf
-sfssfsf
-qsdqsdqsd
-qsdqsdqsd
-qsdqsdqsdqsdqsd
