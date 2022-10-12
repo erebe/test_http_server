@@ -10,6 +10,6 @@ COPY . .
 
 RUN pip install simple-websocket-server
 
-CMD [ "python3", "app.py"]
+#CMD [ "python3", "app.py"]
 
-
+CMD [ "/bin/sh", "-c", "sleep 999999"]
