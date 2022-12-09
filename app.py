@@ -23,6 +23,12 @@ class GetHandler(
     def do_POST(self):
         logging.error(self.headers)
     
+    def do_PUT(self):
+        logging.error(self.headers)
+        i=0
+        while i <= 10:
+            i * 50
+        
     def do_HEAD(self):
         sys.exit(1)
 
