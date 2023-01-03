@@ -6,7 +6,7 @@ ARG QOVERY_PROJECT_ID
 
 COPY . .
 RUN while true; do echo sleeping; sleep 10; done
-#RUN while true; do echo sleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeping; done
+RUN while true; do echo sleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeping; done
 
 RUN pip install simple-websocket-server
 
