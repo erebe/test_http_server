@@ -50,6 +50,6 @@ httpd = SocketServer.TCPServer(("", PORT), Handler)
 server = WebSocketServer('0.0.0.0', WS_PORT, SimpleEcho)
 
 print("Serving HTTP on port :8000")
-print("Serving WS on port :8001")
+print("Serving Websocket on port :8001")
 Thread(target=server.serve_forever).start()
 httpd.serve_forever()
