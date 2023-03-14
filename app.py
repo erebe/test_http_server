@@ -6,6 +6,7 @@ import socketserver as SocketServer
 import logging
 import time
 import sys
+import os
 from threading import Thread
 
 
@@ -18,6 +19,7 @@ class GetHandler(
 
     def do_GET(self):
         logging.error(self.headers)
+        logging.error(os.system("uname -a"))
         SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 
     def do_POST(self):
