@@ -5,7 +5,6 @@ WORKDIR /app
 ARG QOVERY_PROJECT_ID
 
 COPY . .
-RUN exit 1
 #RUN while true; do echo sleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeping; sleep 0.1; done
 
 RUN pip install simple-websocket-server
