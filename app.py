@@ -56,7 +56,7 @@ class SimpleEcho(WebSocket):
 class Greeter(srv_pb2_grpc.GreeterServicer):
    def greet(self, request, context):
       print("Got request " + str(request))
-      return greeting_pb2.ServerOutput(message='{0} {1}!'.format(request.greeting, request.name))
+      return srv_pb2.ServerOutput(message='{0} {1}!'.format(request.greeting, request.name))
 	  
 def grpc_server():
    server = grpc.server(futures.ThreadPoolExecutor(max_workers=2))
