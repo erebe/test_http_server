@@ -1,3 +1,0 @@
-[submodule "test"]
-	path = test
-	url = git@github.com:invivoax/InVivoAX_backend.git
