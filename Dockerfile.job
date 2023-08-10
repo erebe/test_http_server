@@ -1,0 +1,7 @@
+FROM python:3.8-slim-bookworm
+
+WORKDIR /app
+
+ARG QOVERY_PROJECT_ID
+
+CMD [ "/bin/sh", "-c", "echo '{ \"MY_JOB_VAR\": { \"sensitive\": false, \"value\": \"tesotron!!!\" } }' > /qovery-output/qovery-output.json"]
