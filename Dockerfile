@@ -4,8 +4,8 @@ WORKDIR /app
 
 ARG QOVERY_PROJECT_ID
 
-RUN sleep 99999999999
-#COPY . .
+#RUN sleep 99999999999
+COPY . .
 #RUN while true; do echo sleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeping; sleep 0.1; done
 
 RUN pip install simple-websocket-server grpcio-tools
