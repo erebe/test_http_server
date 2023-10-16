@@ -1,7 +1,0 @@
-FROM python:3.8-slim-bookworm
-
-WORKDIR /app
-
-ARG QOVERY_PROJECT_ID
-
-CMD [ "/bin/sh", "-c", "echo '{ \"MY_JOB_VAR\": { \"sensitive\": false, \"value\": \"metal!!!\" }, \"MY_JOB_TUTU\": { \"sensitive\": true, \"value\": \"metal!!!\" } }' > /qovery-output/qovery-output.json"]

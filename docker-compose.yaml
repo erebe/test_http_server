@@ -1,9 +1,0 @@
-services:
-  core:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000" # HTTP
-      - "8001:8001" # ws
-      - "8082:8082" # grpc
