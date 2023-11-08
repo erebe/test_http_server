@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "simple_helm.labels" . | nindent 4 }}
     {{- with .Values.podLabels }}
-      {{- toYaml . | nindent 8 }}
+      {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
