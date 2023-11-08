@@ -4,6 +4,9 @@ metadata:
   name: {{ include "simple_helm.fullname" . }}
   labels:
     {{- include "simple_helm.labels" . | nindent 4 }}
+    {{- with .Values.podLabels }}
+      {{- toYaml . | nindent 8 }}
+    {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -18,6 +21,9 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
+        {{- with .Values.podLabels }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
         {{- include "simple_helm.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
