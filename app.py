@@ -61,7 +61,7 @@ class Greeter(srv_pb2_grpc.GreeterServicer):
 
    def stream(self, request, context):
       while True:
-	if request.greeting != "sleep":
+        if request.greeting != "sleep":
           yield srv_pb2.ServerOutput(message='xxxxx')  
         
 	time.sleep(1)
