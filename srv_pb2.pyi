@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ClientInput(_message.Message):
-    __slots__ = ["greeting", "name"]
+    __slots__ = ("greeting", "name")
     GREETING_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     greeting: str
@@ -13,7 +13,7 @@ class ClientInput(_message.Message):
     def __init__(self, greeting: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ServerOutput(_message.Message):
-    __slots__ = ["message"]
+    __slots__ = ("message",)
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
     message: str
     def __init__(self, message: _Optional[str] = ...) -> None: ...

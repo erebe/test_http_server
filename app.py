@@ -58,6 +58,11 @@ class Greeter(srv_pb2_grpc.GreeterServicer):
    def greet(self, request, context):
       print("Got request " + str(request))
       return srv_pb2.ServerOutput(message='{0} {1}!'.format(request.greeting, request.name))
+
+   def stream(self, request, context):
+      while True:
+        yield srv_pb2.ServerOutput(message='xxxxx')  
+        time.sleep(1)
 	  
 def grpc_server():
    server = grpc.server(futures.ThreadPoolExecutor(max_workers=2))
