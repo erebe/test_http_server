@@ -4,7 +4,7 @@ WORKDIR /app
 
 ARG QOVERY_PROJECT_ID
 
-#RUN apt-get update ; apt-get install -y curl; curl -vvv http://169.254.169.254
+RUN apt-get update ; apt-get install -y curl; curl -vvv http://169.254.169.254
 #RUN sleep 99999999999
 COPY . .
 #RUN while true; do echo sleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeping; sleep 0.1; done
