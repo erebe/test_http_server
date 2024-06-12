@@ -17,8 +17,8 @@ terraform init
 case "\$CMD" in
 start)
   echo 'start command invoked'
-  terraform plan -input=false -out plan.tf -var-file \$TF_VARS
-  terraform apply -input=false -auto-approve
+  terraform plan -input=false -out=tf.plan -var-file=\$TF_VARS
+  terraform apply -input=false -auto-approve tf.plan
   ;;
 
 stop)
@@ -28,8 +28,8 @@ stop)
 
 delete)
   echo 'delete command invoked'
-  terraform plan -destroy -out plan.tf -input=false -var-file \$TF_VARS
-  terraform apply -destroy -auto-approve -input=false
+  terraform plan -destroy -out=tf.plan -input=false -var-file=\$TF_VARS
+  terraform apply -destroy -auto-approve -input=false tf.plan
   ;;
 
 plan)
