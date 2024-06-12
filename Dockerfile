@@ -7,9 +7,13 @@ WORKDIR /data
 RUN cat <<EOF > entrypoint.sh
 #!/bin/sh
 
-set -ex
+if [ "\$JOB_INPUT" != '' ]
+then
+  TF_VARS="\$JOB_INPUT"
+fi
 
 CMD=\$1; shift
+set -ex
 
 cd terraform
 terraform init
@@ -32,9 +36,9 @@ delete)
   terraform apply -destroy -auto-approve -input=false tf.plan
   ;;
 
-plan)
+raw)
   echo 'plan command invoked'
-  terraform plan \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9
+  terraform \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9
   ;;
 
 debug)
