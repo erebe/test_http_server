@@ -17,8 +17,8 @@ terraform init
 case "\$CMD" in
 start)
   echo 'start command invoked'
-  terraform plan -input=false -out plan.tf
-  terraform apply -input=false -auto-approve plan.tf
+  terraform plan -input=false -out plan.tf -var-file \$TF_VARS
+  terraform apply -input=false -auto-approve -var-file \$TF_VARS plan.tf
   ;;
 
 stop)
@@ -28,8 +28,8 @@ stop)
 
 delete)
   echo 'delete command invoked'
-  terraform plan -destroy -out plan.tf -input=false
-  terraform apply -destroy -auto-approve -input=false plan.tf
+  terraform plan -destroy -out plan.tf -input=false -var-file \$TF_VARS
+  terraform apply -destroy -auto-approve -input=false -var-file \$TF_VARS plan.tf
   ;;
 
 plan)
@@ -63,7 +63,8 @@ EOF
 ENV AWS_DEFAULT_REGION=must-be-set-as-env-var
 ENV AWS_ACCESS_KEY_ID=must-be-set-as-env-var
 ENV AWS_SECRET_ACCESS_KEY=must-be-set-as-env-var
-ENV JOB_INPUT=xxx
+ENV TF_VARS=must-be-set-as-env-var-file
+#ENV JOB_OUPUT=/mnt/data/terraform.tfvars
 
 
 ENTRYPOINT ["/usr/bin/dumb-init", "-v", "--", "/data/entrypoint.sh"]
