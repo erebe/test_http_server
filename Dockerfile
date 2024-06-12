@@ -16,7 +16,7 @@ set -x
 
 case "\$CMD" in
 start)
-  echo 'delete command invoked'
+  echo 'start command invoked'
   terraform plan -out plan.tf
   terraform apply -auto-approve plan.tf
   ;;
