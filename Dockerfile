@@ -7,12 +7,12 @@ WORKDIR /data
 RUN cat <<EOF > entrypoint.sh
 #!/bin/sh
 
+set -ex
+
 CMD=\$1; shift
 
 cd terraform
 terraform init
-
-set -ex
 
 case "\$CMD" in
 start)
@@ -23,6 +23,7 @@ start)
 
 stop)
   echo 'stop command invoked'
+  exit 0
   ;;
 
 delete)
