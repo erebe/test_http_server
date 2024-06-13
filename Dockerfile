@@ -1,8 +1,16 @@
 FROM hashicorp/terraform:1.8.5
 
-RUN apk update && apk add dumb-init && mkdir /data
+RUN <<EOF
+set -e
+apk update
+apk add dumb-init
+adduser -D app
+mkdir /data
+chown -R app:app /data
+EOF
 
 WORKDIR /data
+USER app
 
 RUN cat <<EOF > entrypoint.sh
 #!/bin/sh
@@ -37,8 +45,8 @@ delete)
   ;;
 
 raw)
-  echo 'plan command invoked'
-  terraform \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9
+  echo 'raw command invoked'
+  terraform "\$1" "\$2" "\$3" "\$4" "\$5" "\$6" "\$7" "\$8" "\$9"
   ;;
 
 debug)
@@ -56,9 +64,11 @@ esac
 
 EOF
 
-COPY . terraform
+COPY --chown=app:app . terraform
 
 RUN <<EOF
+set -e
+ls -la
 chmod +x entrypoint.sh
 cd terraform
 terraform init -backend=false
