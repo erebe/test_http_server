@@ -68,7 +68,6 @@ COPY --chown=app:app . terraform
 
 RUN <<EOF
 set -e
-ls -la
 chmod +x entrypoint.sh
 cd terraform
 terraform init -backend=false
