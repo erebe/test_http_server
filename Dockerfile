@@ -24,7 +24,7 @@ CMD=\$1; shift
 set -ex
 
 cd terraform
-terraform init
+terraform init -backend-config="terraform-qov-\${QOVERY_JOB_ID}"
 
 case "\$CMD" in
 start)
