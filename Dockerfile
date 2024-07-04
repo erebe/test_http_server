@@ -73,9 +73,6 @@ cd terraform
 terraform init -backend=false
 EOF
 
-ENV AWS_DEFAULT_REGION=must-be-set-as-env-var
-ENV AWS_ACCESS_KEY_ID=must-be-set-as-env-var
-ENV AWS_SECRET_ACCESS_KEY=must-be-set-as-env-var
 ENV TF_VARS=must-be-set-as-env-var-file
 #ENV JOB_OUPUT=/mnt/data/terraform.tfvars
 
