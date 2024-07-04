@@ -24,7 +24,7 @@ CMD=\$1; shift
 set -ex
 
 cd terraform
-terraform init -backend-config="secret_suffix=qovery-terraform-\${QOVERY_JOB_ID}"
+terraform init -backend-config="secret_suffix=qovery-terraform-\${QOVERY_JOB_ID}" -backend-config="namespace=\${QOVERY_KUBERNETES_NAMESPACE_NAME}"
 
 case "\$CMD" in
 start)
