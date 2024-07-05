@@ -1,7 +1,7 @@
-terraform {
-  backend "kubernetes" {
-    in_cluster_config = true
-  }
-}
+#terraform {
+#  backend "kubernetes" {
+#    in_cluster_config = true
+#  }
+#}
 
 
