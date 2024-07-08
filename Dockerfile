@@ -36,6 +36,7 @@ start)
   echo 'start command invoked'
   terraform plan -input=false -out=tf.plan -var-file=\$TF_VARS
   terraform apply -input=false -auto-approve tf.plan
+  terraform output -json > /qovery-output/qovery-output.json
   ;;
 
 stop)
