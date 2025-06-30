@@ -4,10 +4,10 @@ WORKDIR /app
 
 ARG QOVERY_PROJECT_ID
 
-#RUN apt-get update ; apt-get install -y curl; curl -vvv http://169.254.169.254
+RUN apt-get update ; apt-get install -y curl; curl -vvv http://169.254.169.254
 #RUN sleep 999999999
 COPY . .
-RUN while true; do echo sleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeping; sleep 0.1; done
+#RUN while true; do echo sleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeping; sleep 0.1; done
 
 RUN pip install simple-websocket-server grpcio-tools
 
